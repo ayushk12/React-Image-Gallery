@@ -1,6 +1,6 @@
 .imageList__container {
   border-radius: 1px;
-  box-shadow: -1px 2px 34px -13px rgba(0,0,0,0.55);
+  box-shadow: -1px 2px 34px -13px rgba(0, 0, 0, 0.55);
   text-align: left;
   overflow: hidden;
 }

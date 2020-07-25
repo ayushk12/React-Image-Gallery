@@ -1,30 +1,35 @@
 import React from "react";
 
 import ImageSearch from "./ImageSearch/ImageSearch";
+import ImageList from "./ImageList/ImageList";
 
 const API_KEY = "17640339-e9d4068438324f9251e444468";
-const url = `https://pixabay.com/api/?key=${API_KEY}&q=yellow+flowers&image_type=photo&pretty=true`;
 
 class App extends React.Component {
   state = {
     images: [],
   };
-  handleGetRequest = async () => {
+  handleGetRequest = async (e) => {
+    e.preventDefault();
+    const searchTerm = e.target.elements.searchValue.value;
+    const url = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}&image_type=photo&pretty=true`;
     const request = await fetch(url);
     const response = await request.json();
     this.setState({ images: response.hits });
+    console.log(searchTerm);
     console.log(this.state.images);
   };
-
-  componentDidMount() {
-    this.handleGetRequest();
-  }
 
   render() {
     return (
       <div>
         <h1>Image</h1>
         <ImageSearch handleGetRequest={this.handleGetRequest} />
+        {/* {this.state.images.length > 0 &&
+          this.state.images.map((image) => {
+            return <p key={image.id}>{image.tags}</p>;
+          })} */}
+        <ImageList images={this.state.images} />
       </div>
     );
   }

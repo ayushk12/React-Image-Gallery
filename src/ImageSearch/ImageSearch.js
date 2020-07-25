@@ -3,7 +3,7 @@ import React from "react";
 const ImageSearch = (props) => {
   return (
     <div>
-      <form>
+      <form onSubmit={props.handleGetRequest}>
         <input
           type="text"
           autoComplete="off"
