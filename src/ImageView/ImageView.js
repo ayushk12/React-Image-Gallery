@@ -31,7 +31,7 @@ const ImageView = (props) => {
               <h4>
                 Download:{" "}
                 <span>
-                  <a rel="noopener" href={pageURL}>
+                  <a rel="noopener noreferrer" target="_blank" href={pageURL}>
                     {pageURL.substring(0, 10)}...[VIEW FULL LINK]
                   </a>
                 </span>
