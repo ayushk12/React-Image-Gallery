@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./ImageView.css";
 
 const ImageView = (props) => {
-  console.log(props.location.state.image);
+  //   console.log(props.location.state.image);
   const {
     largeImageURL: image,
     user: owner,
@@ -31,7 +31,7 @@ const ImageView = (props) => {
               <h4>
                 Download:{" "}
                 <span>
-                  <a target="_blank" href={pageURL}>
+                  <a rel="noopener" href={pageURL}>
                     {pageURL.substring(0, 10)}...[VIEW FULL LINK]
                   </a>
                 </span>

@@ -16,8 +16,8 @@ class App extends React.Component {
     const request = await fetch(url);
     const response = await request.json();
     this.setState({ images: response.hits });
-    console.log(searchTerm);
-    console.log(this.state.images);
+    // console.log(searchTerm);
+    // console.log(this.state.images);
   };
 
   render() {
