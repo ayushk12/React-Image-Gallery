@@ -9,6 +9,12 @@ class App extends React.Component {
   state = {
     images: [],
   };
+  async componentDidMount() {
+    const url = `https://pixabay.com/api/?key=${API_KEY}&q=${"mountain,cars"}&image_type=photo&pretty=true`;
+    const request = await fetch(url);
+    const response = await request.json();
+    this.setState({ images: response.hits });
+  }
   handleGetRequest = async (e) => {
     e.preventDefault();
     const searchTerm = e.target.elements.searchValue.value;
