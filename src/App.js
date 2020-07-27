@@ -23,12 +23,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Image</h1>
+        {/* <h1>Image</h1> */}
         <ImageSearch handleGetRequest={this.handleGetRequest} />
-        {/* {this.state.images.length > 0 &&
-          this.state.images.map((image) => {
-            return <p key={image.id}>{image.tags}</p>;
-          })} */}
+
         <ImageList images={this.state.images} />
       </div>
     );
